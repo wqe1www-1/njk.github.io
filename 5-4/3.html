@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+<!-- <script src="./1.js"></script> -->
+    <script src="https://www.makeapie.cn/dep/echarts/map/js/china.js"></script>
+</head>
+<style>
+    .a1{color: yellow;position: relative ;left:27px;top: 21px;}
+    .a2{color: #fff;position: relative ;left:24px;top: 21px;}
+    .a3{color: red;position: relative ;left:26px;top: 21px;}
+    .a4{color: #36c9fb;position: relative ;left:28px;top: 21px;}
+    .box{width: 1000px;margin: auto;margin-top:5px; background: #f2f5fa;height: 900px;}
+    .box1{width: 1000px;
+    height: 150px;border: solid 1px saddlebrown; }
+.sanm{width: 100px;height: 100px;border-radius: 50%;background: #36c9fb;float: left;margin-left: 576px;margin-top: 20px; position: absolute  ;}
+.sanm2{width: 100px;height: 100px;border-radius: 50%;background: #95e2bb;float: left;margin-left: 320px;margin-top: 20px; position: absolute  ;}
+.sanm3{width: 100px;height: 100px;border-radius: 50%;background: #fd8180;float: left;margin-left: 782px;margin-top: 20px; position: absolute  ;}
+.sanm1{width: 100px;height: 100px;border-radius: 50%;background: #ff9d50;float: left;margin-left: 100px;margin-top: 20px; position: absolute  ;}
+</style>
+<body>
+    <div class="box">
+        <div class="box1">
+            <div class="sanm"><h3 class="a1">10ms</h3></div>
+            <div class="sanm1"><h3 class="a2">12ms</h3></div>
+            <div class="sanm2"><h3 class="a3">5ms</h3></div>
+            <div class="sanm3"><h3 class="a4">0ms</h3></div>
+        </div>
+        <div class="box2">
+
+            <div id="box_one" style="width:1000px; height: 700px;"></div>
+        </div>
+    </div>
+</body>
+<script>
+
+// $('.btn').click(function(){
+var arr = echarts.init(document.getElementById('box_one'));
+window.dataList = [{
+        name: "南海诸岛",
+        value: 0
+    },
+    {
+        name: '北京',
+        value: 54
+    },
+    {
+        name: '天津',
+        value: 13
+    },
+    {
+        name: '上海',
+        value: 40
+    },
+    {
+        name: '重庆',
+        value: 75
+    },
+    {
+        name: '河北',
+        value: 13
+    },
+    {
+        name: '河南',
+        value: 83
+    },
+    {
+        name: '云南',
+        value: 11
+    },
+    {
+        name: '辽宁',
+        value: 19
+    },
+    {
+        name: '黑龙江',
+        value: 15
+    },
+    {
+        name: '湖南',
+        value: 69
+    },
+    {
+        name: '安徽',
+        value: 60
+    },
+    {
+        name: '山东',
+        value: 39
+    },
+    {
+        name: '新疆',
+        value: 4
+    },
+    {
+        name: '江苏',
+        value: 31
+    },
+    {
+        name: '浙江',
+        value: 104
+    },
+    {
+        name: '江西',
+        value: 36
+    },
+    {
+        name: '湖北',
+        value: 1052
+    },
+    {
+        name: '广西',
+        value: 33
+    },
+    {
+        name: '甘肃',
+        value: 7
+    },
+    {
+        name: '山西',
+        value: 9
+    },
+    {
+        name: '内蒙古',
+        value: 7
+    },
+    {
+        name: '陕西',
+        value: 22
+    },
+    {
+        name: '吉林',
+        value: 4
+    },
+    {
+        name: '福建',
+        value: 18
+    },
+    {
+        name: '贵州',
+        value: 5
+    },
+    {
+        name: '广东',
+        value: 98
+    },
+    {
+        name: '青海',
+        value: 1
+    },
+    {
+        name: '西藏',
+        value: 0
+    },
+    {
+        name: '四川',
+        value: 44
+    },
+    {
+        name: '宁夏',
+        value: 4
+    },
+    {
+        name: '海南',
+        value: 22
+    },
+    {
+        name: '台湾',
+        value: 3
+    },
+    {
+        name: '香港',
+        value: 5
+    },
+    {
+        name: '澳门',
+        value: 5 
+    }
+];
+console.log(111);
+add = {
+    tooltip: {
+        triggerOn: "mousemove",
+        formatter: function (e, t, n) {
+            return .5 == e.value ? e.name + "ms" : e.seriesName + "<br/>" + e.name + ":" + e.value
+        }
+    },
+    visualMap: {
+        min: 0,
+        max: 1000,
+        left: 26,
+        bottom: 40,
+        showLabel: !0,
+        text: [],
+        pieces: [{
+            gt: 100,
+            label: "<20ms",
+            color: "#30b3a3"
+        }, {
+            gte: 10,
+            lte: 100,
+            label: "20-50ms",
+            color: "#86e9aa"
+        }, {
+            gte: 1,
+            lt: 10,
+            label: "50-70ms",
+            color: "#f1e550"
+        }, {
+            gt: 0,
+            lt: 1,
+            label: ">100",
+            color: "#ffc380"
+        }, {
+            value: 0,
+            color: "#fb7477"
+        }],
+        show: !0
+    },
+    geo: {
+        map: "china",
+        roam: !1,
+        scaleLimit: {
+            min: 1,
+            max: 2
+        },
+        zoom: 1.23,
+        top: 120,
+        label: {
+            normal: {
+                show: !0,
+                fontSize: "14",
+                color: "rgba(0,0,0,0.7)"
+            }
+        },
+        itemStyle: {
+            normal: {
+                borderColor: "rgba(0, 0, 0, 0.2)"
+            },
+            emphasis: {
+                areaColor: "#f2d5ad",
+                shadowOffsetX: 0,
+                shadowOffsetY: 0,
+                borderWidth: 0
+            }
+        }
+    },
+    series: [{
+        name: "ms",
+        type: "map",
+        geoIndex: 0,
+        data: window.dataList
+    }]
+};
+arr.setOption(add);
+// });
+
+</script>
+</html>
