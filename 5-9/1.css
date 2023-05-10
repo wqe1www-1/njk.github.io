@@ -13,6 +13,18 @@ a{ color:#333333; text-decoration:none;}
 border-bottom-left-radius: 40%;
 border-bottom-right-radius: 40%;
 }
+
+
+
+
+#box2{
+    width: 1200px;
+    margin: auto;
+    background: #f7f7f7;
+    height: 500px;
+    margin-top: 30px;
+}
+
 #div{
 margin-top: 30%;
     width: 535px;
@@ -70,24 +82,12 @@ transition: all 0.5s;
     margin-left: 5px;
     margin-top: 50px;
 }
-#box2{
-    width: 1200px;
-    margin: auto;
-    background: #f7f7f7;
-    height: 200px;
-    margin-top: 30px;
-}
-#box3{
-    width: 1200px;
-    margin: auto;
-    background: #f7f7f7;
-    height: 200px;
-    margin-top: 30px;
-}
+
+
 .div2{
     width: 200px;
     margin-left: 80px;
-    margin-top: 30px;
+    margin-top: 60px;
  height: 150px;
  background: #fff;
 float: left;
@@ -116,9 +116,81 @@ margin-top: 60px;
 }
 
 
+@media only screen and (max-width: 900px) {
+  
+    #box2{
+        width: 900px;
+        margin: auto;
+        background: #f7f7f7;
+        height: 800px;
+        margin-top: 30px;
+    }
+    .div2{
+        width: 230px;
+        margin-left: 30px;
+        margin-top: 60px;
+     height: 150px;
+     background: #fff;
+    float: left;
+    }
+    #hezi{
+        line-height: 30px;
+        width: 500px;
+     height: 250px;
+     background: #fff;
+     margin: auto;
+     text-align: center;
+    }
+    .zijiFkjm{
+        width: 130px;
+        height: 100px;
+        float: left;
+       border-radius: 50%;
+        margin-left: 10px;
+        margin-top: 50px;
+        transform: scale(1.1);
+        transition: all 0.5s;
+    }
+}
 
 
 
+@media only screen and (max-width: 700px) {
+  
+    #box2{
+        width: 700px;
+        margin: auto;
+        background: #f7f7f7;
+        height: 800px;
+        margin-top: 30px;
+    }
+    .div2{
+        width: 230px;
+        margin-left: 30px;
+        margin-top: 60px;
+     height: 150px;
+     background: #fff;
+    float: left;
+    }
+    #hezi{
+        line-height: 30px;
+        width: 500px;
+     height: 250px;
+     background: #fff;
+     margin: auto;
+     text-align: center;
+    }
+    .zijiFkjm{
+        width: 130px;
+        height: 100px;
+        float: left;
+       border-radius: 50%;
+        margin-left: 10px;
+        margin-top: 50px;
+        transform: scale(1.1);
+        transition: all 0.5s;
+    }
+}
 
 
 
